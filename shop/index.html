@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Tienda de Celulares Contemporáneos</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Tienda de Celulares Contemporáneos</h1>
+
+        <!-- Input para ingresar el ID del producto -->
+        <input type="text" id="product-id" placeholder="Ingresa el ID del producto">
+        <button onclick="products()">Buscar Producto</button>
+
+        <!-- Imagen del producto -->
+        <img id="product-image" src="img/articulo_4.png" alt="Imagen del producto">
+
+        <!-- Detalles del producto -->
+        <p id="product-description" class="description">Descripción del producto aparecerá aquí</p>
+        <p id="product-name">Nombre del producto aparecerá aquí</p>
+        <p id="product-price">Precio del producto aparecerá aquí</p>
+
+        <button class="btn">
+            <span></span>
+            <p data-start="comprame" data-text="Agregado" data-titulo="Agregar al carrito"></p>
+        </button>
+        <p>Formas de pago</p>
+    </div>
+
+    <script src="server.js"></script> <!-- Archivo de JS para manejar el producto -->
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+html {
+    height: 100vh;
+    background-color: rgba(177, 112, 112, 0.597);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 290px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 1px 5px 60px 0px #100a886b;
+    background: #937dc7a3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 600;
+    color: white;
+    display: block;
+    font-size: 18px;
+    margin: 10px 0; /* Asegura el espaciado del texto */
+}
+
+.container img {
+    width: 180px;
+    height: 200px;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+    margin-bottom: 20px; /* Asegura un espacio debajo de la imagen */
+}
+
+.container .description {
+    text-align: center;
+    margin-bottom: 20px; /* Ajusta el espacio entre la descripción y el botón */
+}
+
+.container button {
+    width: 150px;
+    height: 50px;
+    background-color: white;
+    color: #568fa6;
+    position: relative;
+    overflow: hidden;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    margin-top: 20px; /* Espacio entre el botón y otros elementos */
+}
+
+.container button::before, 
+.container button::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #44d8a4;
+    transition: all 0.3s cubic-bezier(0.35, 0.1, 0.5, 1);
+}
+
+.container button::before {
+    right: 0;
+    top: 0;
+    transition: all 0.5s cubic-bezier(0.35, 0.1, 0.5, 1);
+}
+
+.container button::after {
+    left: 0;
+    bottom: 0;
+}
+
+.container button span {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+}
+
+.container button span::before, 
+.container button span::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 0;
+    background-color: #44d8a4;
+    transition: all 0.3s cubic-bezier(0.35, 0.1, 0.5, 1);
+}
+
+.container button span::before {
+    right: 0;
+    top: 0;
+    transition: all 0.5s cubic-bezier(0.35, 0.1, 0.5, 1);
+}
+
+.container button span::after {
+    left: 0;
+    bottom: 0;
+}
+
+.container button p {
+    padding: 0;
+    margin: 0;
+    transition: all 0.5s cubic-bezier(0.35, 0.1, 0.5, 1); /* Aumentado a 0.5s */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.container button p::before, 
+.container button p::after {
+    position: absolute;
+    width: 100%;
+    transition: all 0.5s cubic-bezier(0.35, 0.1, 0.5, 1); /* Efecto más lento */
+    z-index: 1;
+    left: 0;
+}
+
+.container button p::before {
+    content: attr(data-titulo);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.container button p::after {
+    content: attr(data-text);
+    top: 150%;
+    color: #44d8a4;
+}
+
+.container button:hover p::before {
+    top: -100%; /* Incrementado para que suba más */
+    transform: rotate(10deg); /* Aumentado el ángulo de rotación */
+}
+
+.container button:hover p::after {
+    top: 50%; /* La segunda palabra toma la posición */
+    transform: translateY(-50%);
+}
+
+.container button.start:hover:before, 
+.container button.start:hover:after {
+    display: none;
+}
+
+.container button.start:before, 
+.container button.start:after {
+    display: none;
+}
